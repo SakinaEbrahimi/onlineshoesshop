@@ -1,0 +1,116 @@
+<%- include('../include/header.ejs') %>
+</head>
+    <body>
+        <%- include('../include/feature.ejs')%>
+<!-- Featured Section End -->
+        
+<section class="featured spad">
+    <div class="container">
+            <div class="row featured__filter">
+                <% if(products.length>0){                    
+                    for(p of products){                        
+                        %>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat" style="margin-bottom: 50px;">
+                            <div class="featured__item">
+                                <div class="featured__item__pic set-bg" >
+                                    <img src="/<%= p.imageUrl%>" alt="">
+                                </div>
+                                <div class="featured__item__text">
+                                    <h6><a href="#"> Title: <%= p.title%></a></h6>
+                                    <h5> Price: <%= p.price%> $</h5>                                    
+                               </div>
+                            </div>
+                            
+                                <li>
+                                    <a href="/edit-women/<%= p._id%>" title="">
+                                        <i class="glyph-icon icon-edit mrg5R fa-fa-eidt"></i>
+                                        Edit
+                                        
+                                    </a>
+                                </li>
+                                
+                                <form action="/deleted" method="POST">
+                                    <li>
+                                        <a href="javascript:;" class="font-red" title="">
+                                            <input type="hidden" name="productId" value="<%= p._id%>">
+                                            <i class="glyph-icon icon-remove mrg5R"></i>
+                                           <button value="submit" type="submit">Delete</button>
+                                           <input type="hidden" name="_csrf" value="<%=csrfToken %>">
+                                        </a>
+                                    </li>
+                                </form>                            
+                        </div>
+
+                <%}}%>
+                    
+                
+            </div>
+        </div>
+    </section>
+            
+               
+                    <!-- <div class="example-box">
+                            <div class="example-code">
+                                <div class="row">
+                        
+                                    
+                                    <div class="col-md-12">
+                        
+                                        <div class="dashboard-panel content-box remove-border bg-green">
+                                            
+                                            <table class="table text-center">
+                                               
+                                                <tbody>
+                                                                                                        
+                                                        <div class="header">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="text-left">Number</th>
+                                                                        <th class="text-left">Title</th>
+                                                                        <th class="text-left">Catagory</th>
+                                                                        <th class="text-center">Price</th>
+                                                                        <th class="text-right">Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                        </div>
+                                                        <% if(products.length>0){
+                                                            var i=0
+
+                                                            for(p of products){
+                                                                i++                                                            %>
+                                                    <tr> 
+                                                    
+                                                        <td><%= i%></td>
+                                                        <td class="font-bold text-left"><%= p.title%></td>
+                                                        <td><img src="/<%= p.imageUrl%>" alt=""></td>
+                                                        <td><div class="label bg-orange"><%= p.price %></div></td>
+                                                        <td class="text-right">
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    <%}%>
+                                                </tbody>
+                                            </table>
+                                            
+                                        </div>
+                        
+                                    </div>
+                                </div>
+                        
+                            </div>
+                            
+                        </div> -->
+                    
+                    <%
+                }
+                else{
+                    %>
+                <h3>Product Not Found</h3>
+                    
+                    <%
+                }%>
+                
+                
+                
+                            
+<%- include('../include/end.ejs')%>                            

@@ -1,0 +1,19 @@
+<div style="margin: auto ; display: flex; justify-content: center; margin-bottom: 40px;">
+    <% if(currentPage !== 1 && prePage !== 1){
+        %>
+        <a href="?page=1" style="margin: 0% 2px; border: solid rgb(128, 168, 187) 1px; padding: 5px;">1</a>
+    <%}%>
+    <% if(hasPrePage){
+        %>
+        <a href="?page=<%= prePage%>" style="margin: 0% 2px; border: solid rgb(128, 168, 187) 1px; padding: 5px;"><%= prePage%></a>
+    <%}%>
+    <a href="?page=<%= currentPage%>" style="margin: 0% 2px; border: solid rgb(128, 168, 187) 1px; padding: 5px;" class="active"><%= currentPage%></a>
+    <% if(hasNextPage){
+        %>
+        <a href="?page=<%= nextPage%>" style="margin: 0% 2px; border: solid rgb(128, 168, 187) 1px; padding: 5px;"><%= nextPage%></a>
+    <%}%>
+    <% if(lastPage !== currentPage && nextPage !== lastPage){
+        %>
+        <a href="?page=<%= lastPage%>" style="margin: 0% 2px; border: solid rgb(128, 168, 187) 1px; padding: 5px;"><%= lastPage%></a>
+    <%}%>
+    </div>

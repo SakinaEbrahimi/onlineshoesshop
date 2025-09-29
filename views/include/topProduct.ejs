@@ -1,0 +1,163 @@
+<!-- Latest Product Section Begin -->
+<section class="latest-product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="latest-product__text">
+                    <h4>Top Women Shoes</h4>
+                    <div class="latest-product__slider owl-carousel">
+                        <% if(women.length>0){  
+                            i = 0  
+                            j = 0                              
+                                %>
+                        <div class="latest-prdouct__slider__item">
+                            <%  for(w of women){
+                                i ++
+                                if(i < 4){
+                                 
+                                %>
+                                <a href="/women" class="latest-product__item">
+                                    <div class="latest-product__item__pic" style="width: 100px; height: 100px;">
+                                        <img src="/<%= w.imageUrl%>" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6><%= w.title%></h6>
+                                        <span>$ <%= w.price%></span>
+                                    </div>
+                                </a>
+                                <%
+                            }}%>
+                        </div>
+                        <div class="latest-prdouct__slider__item">
+                            <%  for(w of women){
+                                j ++
+                                if(j < 4){
+                                %>
+                                <a href="/women" class="latest-product__item">
+                                    <div class="latest-product__item__pic" style="width: 100px; height: 100px;">
+                                        <img src="/<%= w.imageUrl%>" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6><%= w.title%></h6>
+                                        <span>$ <%= w.price%></span>
+                                    </div>
+                                </a>
+                                
+                                
+                                <%
+                            }}%>
+                            
+                        </div>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="latest-product__text">
+                    <h4>Top Men Shoes</h4>
+                    <div class="latest-product__slider owl-carousel">
+                        <% if(man.length>0){  
+                            i = 0  
+                            j = 0                               
+                                %>
+                        <div class="latest-prdouct__slider__item">
+                            <%  for(m of man){
+                                i ++
+                                if(i < 4){
+                                 
+                                %>
+                                <a href="/men" class="latest-product__item">
+                                    <div class="latest-product__item__pic" style="width: 100px; height: 100px;">
+                                        <img src="/<%= m.imageUrl%>" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6><%= m.title%></h6>
+                                        <span>$ <%= m.price%></span>
+                                    </div>
+                                </a>
+                                <%
+                            }}%>
+                        </div>
+                        <div class="latest-prdouct__slider__item">
+                            <%  for(m of man){
+                                j ++
+                                if(j < 4){
+                                %>
+                                <a href="/men" class="latest-product__item">
+                                    <div class="latest-product__item__pic" style="width: 100px; height: 100px;">
+                                        <img src="/<%= m.imageUrl%>" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6><%= m.title%></h6>
+                                        <span>$ <%= m.price%></span>
+                                    </div>
+                                </a>
+                                
+                                
+                                <%
+                            }}%>
+                            
+                        </div>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="latest-product__text">
+                    <h4>Top Kids Shoes</h4>
+                    <div class="latest-product__slider owl-carousel">
+                        <% if(kids.length>0){  
+                            i = 0  
+                            j = 0                               
+                                %>
+                        <div class="latest-prdouct__slider__item">
+                            <%  for(k of kids){
+                                i ++
+                                if(i < 4){
+                                 
+                                %>
+                                <a href="/kids" class="latest-product__item">
+                                    <div class="latest-product__item__pic" style="width: 100px; height: 100px;">
+                                        <img src="/<%= k.imageUrl%>" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6><%= k.title%></h6>
+                                        <span>$ <%= k.price%></span>
+                                    </div>
+                                </a>
+                                <%
+                            }}%>
+                        </div>
+                        <div class="latest-prdouct__slider__item">
+                            <%  for(k of kids){
+                                j ++
+                                if(j < 4){
+                                %>
+                                <a href="/kids" class="latest-product__item">
+                                    <div class="latest-product__item__pic" style="width: 100px; height: 100px;">
+                                        <img src="/<%= k.imageUrl%>" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6><%= k.title%></h6>
+                                        <span>$ <%= k.price%></span>
+                                    </div>
+                                </a>
+                                
+                                
+                                <%
+                            }}%>
+                            
+                        </div>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Latest Product Section End -->
+<!-- Footer Section Begin -->
+<footer class="footer spad">
+        
+</footer>
+<!-- Footer Section End -->

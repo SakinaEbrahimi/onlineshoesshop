@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Online Shop</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>  <body>
+
+    <%- include('../include/feature.ejs')%>
+  <!-- Featured Section End -->
+    <div class="container-scroller">
+  
+      <div class="container-fluid page-body-wrapper">
+        
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row margin-cente">
+              
+              <div class="col-10 stretch-card" style="align-content: center;">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Add Women Products Page</h4>
+                    <form class="forms-sample" action="/edit-men" method="POST" enctype="multipart/form-data">
+                      <div class="form-group">
+                        <label for="exampleInputName1">Title:</label>
+                        <input value="<%= product.title%>" type="text" class="form-control" id="exampleInputName1" placeholder="Title" name="title">
+                      </div>
+                      <div>
+                        <img src="/<%= product.imageUrl%>" alt="">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Price: </label>
+                        <input value="<%= product.price%>" type="text" name="price" class="form-control" id="exampleInputEmail3" placeholder="Price">                      
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Color:</label>
+                        <input value="<%= product.color%>" type="text" class="form-control" id="exampleInputName1" placeholder="Color" name="color">
+                      </div><div class="form-group">
+                        <label for="exampleInputName1">Size: </label>
+                        <input value="<%= product.size%>" type="text" class="form-control" id="exampleInputName1" placeholder="Size" name="size">
+                      </div><div class="form-group">
+                        <label for="exampleInputName1">OFF: </label>
+                        <input value="<%= product.off%>" type="text" class="form-control" id="exampleInputName1" placeholder="OFF" name="off">
+                      </div>
+                      <div class="form-group">
+                        <label>Image upload</label>
+                        <!-- <input type="file" name="img[]" class="file-upload-default"> -->
+                        <div class="input-group col-xs-12 d-flex align-items-center">
+                          <input type="file" name="image"  >
+                          
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="exampleTextarea1">Description</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4" name="description"><%= product.description%></textarea>
+                      </div>
+                      <input type="hidden" value="<%= product._id%>" name="productId">
+                      <button type="submit" class="btn btn-primary me-2">Submit</button>
+                      <input type="hidden" name="_csrf" value="<%=csrfToken %>">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer">
+ 
+</footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <%- include('../include/end.ejs')%>

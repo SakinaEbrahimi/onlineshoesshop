@@ -1,0 +1,125 @@
+<%- include('../include/head.ejs') %>
+</head>
+    <body style="overflow: hidden;">
+        
+
+        <div id="loading" class="ui-front loader ui-widget-overlay bg-white opacity-100">
+            <img src="assets/images/loader-dark.gif" alt="" />
+        </div>
+
+        <div id="page-wrapper" class="demo-example">
+
+            
+            <%- include('../include/theme-customize.ejs')%>
+            <!-- theme customizer -->
+            <%- include('../include/pageheader.ejs')%>
+            <!-- #page-header -->
+
+            
+            <%- include('../include/pagesidebar.ejs')%>
+            <!-- #page-sidebar -->
+<div id="page-content-wrapper">
+    
+            <%- include('../include/search.ejs')%>
+            <!-- #page-title -->
+        <div id="page-content">
+
+
+            <h3>
+                Lists of Products
+            </h3>
+            <br>
+               
+                    <div class="example-box">
+                            <div class="example-code">
+                                <div class="row">
+                        
+                                    
+                                    <div class="col-md-12">
+                        
+                                        <div class="dashboard-panel content-box remove-border bg-green">
+                                            
+                                            <table class="table text-center">
+                                               
+                                                <tbody>
+                                                                                                        
+                                                        <div class="header">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="text-left">Number</th>
+                                                                        <th class="text-left">Title</th>
+                                                                        <th class="text-left">Catagory</th>
+                                                                        <th class="text-center">Price</th>
+                                                                        <th class="text-center">Image</th>
+
+                                                                        <th class="text-right">Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                        </div>
+                                                        <% if(products.length>0){
+                                                            var i=0
+
+                                                            for(p of products){
+                                                                i++                                                            %>
+                                                    <tr> 
+                                                    
+                                                        <td><%= i%></td>
+                                                        <td class="font-bold text-left"><%= p.title%></td>
+                                                        <td><img src="/<%= p.imageUrl%>" alt=""></td>
+                                                        <td><div class="label bg-orange"><%= p.price %></div></td>
+                                                        <td class="text-right">
+                                                            <div class="dropdown">
+                                                                <a href="javascript:;" title="" class="btn medium bg-orange" data-toggle="dropdown">
+                                                                    <span class="button-content">
+                                                                        <i class="glyph-icon font-size-11 icon-cog"></i>
+                                                                        <i class="glyph-icon font-size-11 icon-chevron-down"></i>
+                                                                    </span>
+                                                                </a>
+                                                                <ul class="dropdown-menu float-right">
+                                                                                          
+                                                                    <li>
+                                                                        <a href="javascript:;" title="">
+                                                                            <i class="glyph-icon icon-calendar mrg5R"></i>
+                                                                            Details
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="/cart/<%= p._id%>" title="" >
+                                                                            <!-- <i class="glyph-icon icon-download mrg5R"> -->
+                                                                            Add to cart
+                                                                       
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="divider"></li>
+                                                                    
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <%}%>
+                                                </tbody>
+                                            </table>
+                                            
+                                        </div>
+                        
+                                    </div>
+                                </div>
+                        
+                            </div>
+                            
+                        </div>
+                    
+                    <%
+                }
+                else{
+                    %>
+                <h3>Product Not Found</h3>
+                    
+                    <%
+                }%>
+                
+                
+                
+            <div class="divider"></div>
+                            
+<%- include('../include/end.ejs')%>                            

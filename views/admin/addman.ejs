@@ -1,0 +1,69 @@
+<%- include('../include/header.ejs') %>
+  <body>
+    <%- include('../include/add.ejs') %>
+  <!-- Featured Section End -->
+    <div class="container-scroller">
+  
+      <div class="container-fluid page-body-wrapper">
+        
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row margin-cente">
+              
+              <div class="col-10 stretch-card" style="align-content: center;">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Add men Products Page</h4>
+                    <form class="forms-sample" action="/addmen" method="POST" enctype="multipart/form-data">
+                      <div class="form-group">
+                        <label for="exampleInputName1">Title: </label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Title" name="title">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Price: </label>
+                        <input type="text" name="price" class="form-control" id="exampleInputEmail3" placeholder="Price">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Color: </label>
+                        <input type="text" name="color" class="form-control" id="exampleInputEmail3" placeholder="Color">
+                      </div><div class="form-group">
+                        <label for="exampleInputEmail3">Size : </label>
+                        <input type="text" name="size" class="form-control" id="exampleInputEmail3" placeholder="Size">
+                      </div><div class="form-group">
+                        <label for="exampleInputEmail3">OFF : </label>
+                        <input type="text" name="off" class="form-control" id="exampleInputEmail3" placeholder="Off">
+                      </div>
+                      <div class="form-group">
+                        <label>Image upload</label>
+                        <div class="input-group col-xs-12 d-flex align-items-center">
+                          <input type="file" name="image"  >
+                          
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="exampleTextarea1">Description</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4" name="description"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary me-2">Submit</button>
+                      <input type="hidden" name="_csrf" value="<%=csrfToken %>">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer">
+ 
+</footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <%- include('../include/end.ejs')%>
